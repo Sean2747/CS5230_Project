@@ -1,1 +1,1 @@
-git@github.com:Sean2747/CS5230_Project.git
+# Group 7 Project: Search and Rescue
