@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            "wander_node = scout_controller.wander:main"
         ],
     },
 )

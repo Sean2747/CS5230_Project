@@ -13,3 +13,13 @@ log/
 # CMake
 CMakeFiles/
 CMakeCache.txt
+.vscode/
+*.vc.db
+
+build/
+install/
+log/
+
+*.pyc
+__pycache__/
+.DS_Store
