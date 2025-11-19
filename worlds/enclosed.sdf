@@ -1,4 +1,5 @@
-<sdf version='1.9'>
+<?xml version="1.0" ?>
+<sdf version='1.8'>
   <world name='enclosed_world'>
     <gravity>0 0 -9.81</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
@@ -237,7 +238,7 @@
       <self_collide>true</self_collide>
       <pose>0 0 0 0 0 0</pose>
       <include merge="true">
-        <uri>file:///home/shanj/ros2_ws/models/vehicle</uri>
+        <uri>models/vehicle/model.sdf</uri>
       </include>
       
       <plugin name='gz::sim::systems::JointStatePublisher' filename='gz-sim-joint-state-publisher-system'/>
