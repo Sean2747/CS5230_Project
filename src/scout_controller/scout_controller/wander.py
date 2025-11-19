@@ -15,7 +15,7 @@ class WanderNode(Node):
 
     def send_velocity_command(self):
         msg = Twist()
-        if getattr(self, "turning", True):
+        if self.turning == True:
             msg.linear.x = 0.0
             msg.angular.z = 0.5
         else:
@@ -24,18 +24,17 @@ class WanderNode(Node):
         self.cmd_vel_pub_.publish(msg)
 
     def lidar_callback(self, msg: LaserScan):
+        i = 319
+        window = msg.ranges[max(0, i-15):min(len(msg.ranges), i+16)]
 
-            i = 319
-            window = msg.ranges[max(0, i-15):min(len(msg.ranges), i+16)]
+        vals = [r for r in window if math.isfinite(r) and r > msg.range_min]
+        front_distance = min(vals) if vals else msg.range_max
+        #front_distance = min(min(msg.ranges[0:20] + msg.ranges[-20:]), 10.0)
 
-            vals = [r for r in window if math.isfinite(r) and r > msg.range_min]
-            front_distance = min(vals) if vals else msg.range_max
-            #front_distance = min(min(msg.ranges[0:20] + msg.ranges[-20:]), 10.0)
-
-            if front_distance < 4.0:
-              self.turning = True
-            else:
-              self.turning = False
+        if front_distance < 4.0:
+            self.turning = True
+        else:
+            self.turning = False
 
 
 def main(args=None):
