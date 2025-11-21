@@ -8,6 +8,10 @@ Building the ROS package (scout_controller)
 colcon build --symlink-install
 source install/setup.bash
 ```
+Running the launch file
+```
+ros2 launch scout_controller gazebo_with_bridge.launch.py
+```
 
 Running the Wander Node
 ```
