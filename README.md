@@ -16,7 +16,7 @@ ros2 launch scout_controller launch_sim.launch.py
 
 To run with a specific world, use world argument (default is empty.sdf)
 ```
-ros2 launch scout_controller launch_sim.launch.py world:=./src/scout_controller/worlds/enclosed.sdf
+ros2 launch scout_controller launch_sim.launch.py world:=./src/scout_controller/worlds/enclosed_obstacle.sdf
 ```
 
 ### Run RViz + SLAM Toolbox

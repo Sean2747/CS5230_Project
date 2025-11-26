@@ -1,0 +1,372 @@
+<sdf version='1.9'>
+  <world name='enclosed_forest'>
+    <gravity>0 0 -9.81</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='col'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='vis'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall_north'>
+      <static>true</static>
+      <pose>0 10 1 0 -0 0</pose>
+      <link name='l'>
+        <collision name='c'>
+          <geometry>
+            <box>
+              <size>20 1 2</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='v'>
+          <geometry>
+            <box>
+              <size>20 1 2</size>
+            </box>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall_south'>
+      <static>true</static>
+      <pose>0 -10 1 0 -0 0</pose>
+      <link name='l'>
+        <collision name='c'>
+          <geometry>
+            <box>
+              <size>20 1 2</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='v'>
+          <geometry>
+            <box>
+              <size>20 1 2</size>
+            </box>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall_east'>
+      <static>true</static>
+      <pose>10 0 1 0 -0 0</pose>
+      <link name='l'>
+        <collision name='c'>
+          <geometry>
+            <box>
+              <size>1 20 2</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='v'>
+          <geometry>
+            <box>
+              <size>1 20 2</size>
+            </box>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='wall_west'>
+      <static>true</static>
+      <pose>-10 0 1 0 -0 0</pose>
+      <link name='l'>
+        <collision name='c'>
+          <geometry>
+            <box>
+              <size>1 20 2</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='v'>
+          <geometry>
+            <box>
+              <size>1 20 2</size>
+            </box>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file://./src/scout_controller/models/oak_tree</uri>
+      <name>Oak tree</name>
+      <pose>3.48158 -1.82587 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree</name>
+      <pose>6.47842 2.145 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_0</name>
+      <pose>4.75138 3.59106 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_1</name>
+      <pose>3.54338 4.568 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_2</name>
+      <pose>2.02014 5.07597 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_3</name>
+      <pose>6.28386 7.19477 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_4</name>
+      <pose>-5.26018 4.74171 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_5</name>
+      <pose>-2.24389 -2.46283 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_6</name>
+      <pose>-3.69809 -0.523003 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_7</name>
+      <pose>-6.23744 -5.75171 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/oak_tree</uri>
+      <name>Oak tree_0</name>
+      <pose>-6.73554 -3.51479 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_8</name>
+      <pose>0.3243 5.2495 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_9</name>
+      <pose>-1.2492 5.7859 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>file://./src/scout_controller/models/pine_tree</uri>
+      <name>Pine Tree_10</name>
+      <pose>-3.37646 5.36595 0 0 -0 0</pose>
+    </include>
+    <model name='ellipsoid'>
+      <pose>-9.1236 -6.98203 0.186668 1.5708 -1.37749 -0.350892</pose>
+      <link name='ellipsoid_link'>
+        <inertial>
+          <inertia>
+            <ixx>0.068000000000000005</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.058000000000000003</iyy>
+            <iyz>0</iyz>
+            <izz>0.025999999999999999</izz>
+          </inertia>
+          <mass>1</mass>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='ellipsoid_collision'>
+          <geometry>
+            <ellipsoid>
+              <radii>0.2 0.3 0.5</radii>
+            </ellipsoid>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='ellipsoid_visual'>
+          <geometry>
+            <ellipsoid>
+              <radii>0.2 0.3 0.5</radii>
+            </ellipsoid>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.2 -1</direction>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>10</range>
+        <linear>1</linear>
+        <constant>1</constant>
+        <quadratic>0</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
