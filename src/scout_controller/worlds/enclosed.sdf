@@ -234,28 +234,6 @@
       <self_collide>false</self_collide>
     </model>
 
-    <model name='vehicle'>                                                                                      <!--vehicle imported here-->
-      <self_collide>true</self_collide>
-      <pose>0 0 0 0 0 0</pose>
-      <include merge="true">
-        <uri>models/vehicle/model.sdf</uri>
-      </include>
-      
-      <plugin name='gz::sim::systems::JointStatePublisher' filename='gz-sim-joint-state-publisher-system'/>
-      <plugin name='gz::sim::systems::PosePublisher' filename='gz-sim-pose-publisher-system'>
-        <publish_link_pose>true</publish_link_pose>
-        <use_pose_vector_msg>true</use_pose_vector_msg>
-        <static_publisher>true</static_publisher>
-        <static_update_frequency>1</static_update_frequency>
-      </plugin>
-      <plugin name='gz::sim::systems::OdometryPublisher' filename='gz-sim-odometry-publisher-system'>
-        <odom_frame>vehicle/odom</odom_frame>
-        <robot_base_frame>vehicle</robot_base_frame>
-      </plugin>
-      <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'/>
-      <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
-      <static>false</static>
-    </model>
 
     <model name='box'>
       <pose>1.4526 4.97376 0.5 0 -0 0</pose>
