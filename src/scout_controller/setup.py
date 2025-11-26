@@ -17,7 +17,7 @@ setup(
         (os.path.join('share', package_name, 'config'),
             glob(os.path.join('config', '*.*'))),
         (os.path.join('share', package_name, 'worlds'),
-            glob(os.path.join('worlds', '*.world'))),
+            glob(os.path.join('worlds', '*.sdf'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
