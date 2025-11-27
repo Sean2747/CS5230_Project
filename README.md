@@ -11,6 +11,7 @@ source install/setup.bash
 
 ### Run Gazebo
 ```
+export LIBGL_ALWAYS_SOFTWARE=1
 ros2 launch scout_controller launch_sim.launch.py
 ```
 
