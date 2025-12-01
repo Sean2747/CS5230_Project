@@ -31,6 +31,10 @@ rviz2 -d src/scout_controller/config/main.rviz
 #inside ros2_Ws
 ros2 launch scout_controller online_async.launch.py
 ```
+another way to run SLAM while setting the parameters:
+```
+ros2 launch scout_controller online_async.launch.py slam_params_file:= /home/shanj/ros2_ws/src/scout_controller/config/mapper_params_online_async.yaml use_sim_time:=true
+```
 
 ### Run Navigation
 This will run the map-filling algorithm that attempts to cover as much as area as possible in the SLAM map
